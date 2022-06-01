@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=2]
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://fonts/Gilroy-Light.otf"
+
+[sub_resource type="DynamicFont" id=20]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 13 )
+
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://fonts/Gilroy-Light.otf"
+
+[sub_resource type="DynamicFont" id=21]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 15 )
+
+[sub_resource type="DynamicFontData" id=17]
+font_path = "res://fonts/Gilroy-Light.otf"
+
+[sub_resource type="DynamicFont" id=22]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 17 )
+
+[sub_resource type="DynamicFontData" id=19]
+font_path = "res://fonts/Gilroy-Light.otf"
+
+[sub_resource type="DynamicFont" id=23]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 19 )
+
+[node name="Choices" type="Node"]
+
+[node name="holder" type="ReferenceRect" parent="."]
+margin_left = 1401.0
+margin_top = -18.0
+margin_right = 1879.0
+margin_bottom = 532.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choice1" type="RichTextLabel" parent="holder"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -177.0
+margin_top = -170.5
+margin_right = 237.0
+margin_bottom = -83.5
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choice2" type="RichTextLabel" parent="holder"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -174.0
+margin_top = -62.5
+margin_right = 234.0
+margin_bottom = 38.5
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choice3" type="RichTextLabel" parent="holder"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -177.0
+margin_top = 43.5
+margin_right = 237.0
+margin_bottom = 133.5
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choice4" type="RichTextLabel" parent="holder"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -179.0
+margin_top = 151.5
+margin_right = 240.0
+margin_bottom = 228.5
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/components/TextureProgressBar.gd" type="Script" id=1]
+[ext_resource path="res://src/components/content/fancyprogressbar.png" type="Texture" id=2]
+[ext_resource path="res://src/components/content/over.png" type="Texture" id=3]
+[ext_resource path="res://src/components/TextureProgress.gd" type="Script" id=4]
+
+[node name="TextureProgressBar" type="Node"]
+pause_mode = 1
+script = ExtResource( 1 )
+
+[node name="ProgressBar" type="TextureProgress" parent="."]
+margin_left = 1469.0
+margin_top = 534.0
+margin_right = 4522.0
+margin_bottom = 854.0
+rect_scale = Vector2( 0.13, 0.09 )
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+
+[connection signal="timeout" from="ProgressBar/Timer" to="ProgressBar" method="_on_Timer_timeout"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://fonts/Gilroy-Light.otf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 11 )
+
+[node name="Questions" type="Node"]
+
+[node name="question" type="RichTextLabel" parent="."]
+margin_left = 545.0
+margin_top = 56.0
+margin_right = 994.0
+margin_bottom = 117.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

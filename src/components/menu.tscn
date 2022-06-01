@@ -1,0 +1,183 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://src/components/content/button-play.png" type="Texture" id=1]
+[ext_resource path="res://src/components/menu.gd" type="Script" id=2]
+[ext_resource path="res://src/components/content/start-box.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 962.5, 553 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://fonts/SpaceMission-rgyw9.otf"
+
+[sub_resource type="DynamicFont" id=5]
+font_data = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.211765, 0.788235, 0.211765, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.211765, 0.788235, 0.211765, 0 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.117647, 0.537255, 0.219608, 0 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://fonts/NotoSerifSC-SemiBold.otf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 100
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 13 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://fonts/SpaceMission-rgyw9.otf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+outline_color = Color( 0.0470588, 0.960784, 0.0823529, 1 )
+font_data = SubResource( 8 )
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/Start-box:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 963, 538 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "gamestartslidein"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/Start-box:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 963, 538 ), Vector2( 963, -259 ) ]
+}
+
+[node name="menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+z_index = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2( 952.5, 536 )
+shape = SubResource( 10 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Start-box" type="Sprite" parent="CanvasLayer2"]
+position = Vector2( 963, 538 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="start" type="Button" parent="CanvasLayer2/Start-box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -574.167
+margin_top = -253.833
+margin_right = -318.167
+margin_bottom = 22.1667
+rect_scale = Vector2( 0.6, 0.6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
+action_mode = 0
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="CanvasLayer2/Start-box"]
+margin_left = -355.0
+margin_top = -352.0
+margin_right = 355.0
+margin_bottom = -153.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/Start-box/ReferenceRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -214.5
+margin_top = -78.0
+margin_right = 214.5
+margin_bottom = 78.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Button" parent="CanvasLayer2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 856.0
+margin_top = -506.0
+margin_right = 2056.0
+margin_bottom = 694.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_colors/font_color = Color( 0.2, 0.92549, 0.188235, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
+disabled = true
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/RESET = SubResource( 12 )
+anims/gamestartslidein = SubResource( 11 )
+
+[connection signal="pressed" from="CanvasLayer2/Start-box/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer2/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
